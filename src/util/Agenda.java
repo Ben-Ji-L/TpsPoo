@@ -9,7 +9,7 @@ public class Agenda {
 
 	public Agenda(String nom) {
 		this.nom = nom;
-		liste = new ArrayList<Evenement>();
+		liste = new ArrayList<>();
 	}
 
 	public int indexOf(Evenement event) {
@@ -27,12 +27,12 @@ public class Agenda {
 	}
 
 	public String toString() {
-		String str = this.nom + "\nqui contient :\n";
+		StringBuilder str = new StringBuilder(this.nom + "\nqui contient :\n");
 
 		for (int i = 0; i < liste.size(); i++) {
-			str += " " + get(i) + "\n";
+			str.append(" ").append(get(i)).append("\n");
 		}
-		return str;
+		return str.toString();
 	}
 
 	public boolean peutAccuellir(Evenement event) {
